@@ -18,7 +18,8 @@ Schema:
 
 React Component Tree:
 
-![Screen Shot 2022-10-27 at 12 04 02 PM](https://user-images.githubusercontent.com/107948622/198342188-9e766532-9cc7-419c-a103-313d0b808fa9.png)
+![Screen Shot 2022-10-27 at 12 48 17 PM](https://user-images.githubusercontent.com/107948622/198350866-19edbcf0-04f2-47a3-bad9-bfe2da019019.png)
+
 
 A User can search for records and add them to their vinyl collection page:
 
