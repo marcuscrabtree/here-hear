@@ -1,0 +1,33 @@
+class ReviewsController < ApplicationController
+
+    def create
+        review = Review.create(review_params)
+        render json: review, status: :created
+    end
+
+    def index
+        if params[:album_id]
+          album = Album.find(params[:album_id])
+          reviews = album.reviews
+        else
+          reviews = Review.all
+        end
+        render json: reviews, include: :album
+    end
+
+    def show
+        review = Review.find(params[:id])
+        render json: review, include: :album
+      end
+
+    private
+    
+    def review_params
+        params.permit(:album_id, :review_text, :review_rating, :user_id)
+    end
+
+    def render_unprocessable_entity(invalid)
+		render json: {error: invalid.record.errors}, status: :unprocessable_entity
+	end
+
+end
